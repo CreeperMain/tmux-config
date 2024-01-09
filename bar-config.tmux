@@ -21,6 +21,10 @@ set -g status-right-length "100"
 set -g status-left "#[fg=#ff9e64] 󰖲 #S #[fg=#b4f9f8]󰙅 #(echo '#{pane_current_path}' | rev | cut -d'/' -f-2 | rev) "
 set -g status-right "#{battery_color_fg}#[bg=#1a1b26] #{battery_icon} #{battery_percentage} 󱧥 #(acpi -b | grep -m 1 -Eo "[0-9]+:[0-9]+") #[fg=#7aa2f7]#[fg=#1a1b26,bg=#7aa2f7] #(date +'󰔠 %H:%M %d/%m/%Y') "
 
+setw -g window-status-format "#[fg=#1a1b26,bg=#1a1b26,nobold,nounderscore,noitalics]#[fg=#414868,bg=#1a1b26] #I #W #[fg=#1a1b26,bg=#1a1b26,nobold,nounderscore,noitalics]"
+setw -g window-status-current-format "#[fg=#1a1b26,bg=#24283b,nobold,nounderscore,noitalics]#[fg=#a9b1d6,bg=#24283b,nobold] #I #W #[fg=#24283b,bg=#1a1b26,nobold,nounderscore,noitalics]"
+
+#battery config
 set -g @batt_icon_charge_tier8 '󰁹'
 set -g @batt_color_charge_primary_tier8 '#35A77C'
 set -g @batt_icon_charge_tier7 '󰂂'
@@ -41,6 +45,3 @@ set -g @batt_icon_status_charged '󰂄'
 set -g @batt_icon_status_charging ''
 set -g @batt_color_status_primary_charged '#35A77C'
 set -g @batt_color_status_primary_charging '#b8bb26'
-
-setw -g window-status-format "#[fg=#1a1b26,bg=#1a1b26,nobold,nounderscore,noitalics]#[fg=#414868,bg=#1a1b26] #I #W #[fg=#1a1b26,bg=#1a1b26,nobold,nounderscore,noitalics]"
-setw -g window-status-current-format "#[fg=#1a1b26,bg=#24283b,nobold,nounderscore,noitalics]#[fg=#a9b1d6,bg=#24283b,nobold] #I #W #[fg=#24283b,bg=#1a1b26,nobold,nounderscore,noitalics]"
